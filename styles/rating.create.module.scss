@@ -1,0 +1,16 @@
+.rating-create {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating-create > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  color: #111111;
+}
+.rating-create > span:hover:before,
+.rating-create > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+  color: orange;
+}

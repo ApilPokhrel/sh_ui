@@ -1,0 +1,464 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 214,
+      "max": [
+        6.0215134620666504,
+        50.999992370605469,
+        206.69999694824219
+      ],
+      "min": [
+        -5.9785017967224121,
+        -51.000007629394531,
+        0
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 2568,
+      "componentType": 5126,
+      "count": 214,
+      "max": [
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 214,
+      "max": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "min": [
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 214,
+      "max": [
+        0.98529344797134399,
+        0.95198076963424683
+      ],
+      "min": [
+        0.0050551295280456543,
+        0.0078601539134979248
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 330,
+      "max": [
+        213
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 5136,
+      "componentType": 5126,
+      "count": 1020,
+      "max": [
+        60.948211669921875,
+        45.312191009521484,
+        200.00001525878906
+      ],
+      "min": [
+        0.033148124814033508,
+        -27.004457473754883,
+        -7.62939453125e-06
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 17376,
+      "componentType": 5126,
+      "count": 1020,
+      "max": [
+        0.99441158771514893,
+        0.99297434091567993,
+        1
+      ],
+      "min": [
+        -0.99299919605255127,
+        -0.99453890323638916,
+        -1
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 3424,
+      "componentType": 5126,
+      "count": 1020,
+      "max": [
+        0.93499916791915894,
+        0.99405670166015625,
+        1,
+        1
+      ],
+      "min": [
+        -0.93500000238418579,
+        -0.93016976118087769,
+        -1,
+        -1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 1712,
+      "componentType": 5126,
+      "count": 1020,
+      "max": [
+        0.99507147073745728,
+        0.99191027879714966
+      ],
+      "min": [
+        0.0077509800903499126,
+        0.0062007848173379898
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 1320,
+      "componentType": 5125,
+      "count": 2514,
+      "max": [
+        1019
+      ],
+      "min": [
+        0
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "extras": {
+      "author": "JMGameDev (https://sketchfab.com/JMGameDev)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/office-door-open-40-degrees-0232c631dbda4790b47e64e5fd7208e5",
+      "title": "Office Door Open 40 Degrees"
+    },
+    "generator": "Sketchfab-8.72.3",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 11376,
+      "byteOffset": 0,
+      "name": "floatBufferViews",
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 9872,
+      "byteOffset": 11376,
+      "byteStride": 8,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 29616,
+      "byteOffset": 21248,
+      "byteStride": 12,
+      "name": "floatBufferViews",
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 19744,
+      "byteOffset": 50864,
+      "byteStride": 16,
+      "name": "floatBufferViews",
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 70608,
+      "uri": "scene.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "textures/Doorway_baseColor.png"
+    },
+    {
+      "uri": "textures/Doorway_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Doorway_normal.png"
+    },
+    {
+      "uri": "textures/Door_baseColor.png"
+    },
+    {
+      "uri": "textures/Door_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Door_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "name": "Doorway",
+      "normalTexture": {
+        "index": 2,
+        "scale": 1,
+        "texCoord": 0
+      },
+      "occlusionTexture": {
+        "index": 1,
+        "strength": 1,
+        "texCoord": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicFactor": 1,
+        "metallicRoughnessTexture": {
+          "index": 1,
+          "texCoord": 0
+        },
+        "roughnessFactor": 1
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "doubleSided": false,
+      "name": "Door",
+      "normalTexture": {
+        "index": 5,
+        "scale": 1,
+        "texCoord": 0
+      },
+      "occlusionTexture": {
+        "index": 4,
+        "strength": 1,
+        "texCoord": 0
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "baseColorTexture": {
+          "index": 3,
+          "texCoord": 0
+        },
+        "metallicFactor": 1,
+        "metallicRoughnessTexture": {
+          "index": 4,
+          "texCoord": 0
+        },
+        "roughnessFactor": 1
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "SM Office Door_Doorway_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "SM Office Door_Door_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TANGENT": 7,
+            "TEXCOORD_0": 8
+          },
+          "indices": 9,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode (gltf orientation matrix)",
+      "rotation": [
+        -0.70710678118654746,
+        -0,
+        -0,
+        0.70710678118654757
+      ]
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "RootNode (model correction matrix)"
+    },
+    {
+      "children": [
+        3
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "a0a162a101654ea7b63073330a34715b.fbx"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        5,
+        6
+      ],
+      "matrix": [
+        -0.99999999999994316,
+        -8.7422779804560274e-08,
+        3.2584139830759679e-07,
+        0,
+        3.2584141532943304e-07,
+        -1.9470716017266909e-07,
+        0.99999999999992806,
+        0,
+        -8.7422716360900625e-08,
+        0.99999999999997735,
+        1.9470718859437852e-07,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "name": "SM Office Door"
+    },
+    {
+      "mesh": 0,
+      "name": "SM Office Door_Doorway_0"
+    },
+    {
+      "mesh": 1,
+      "name": "SM Office Door_Door_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "OSG_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    },
+    {
+      "sampler": 0,
+      "source": 5
+    }
+  ]
+}
+
