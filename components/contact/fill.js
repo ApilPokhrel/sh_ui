@@ -68,7 +68,7 @@ export default function fill(props) {
                 <span className="mtext-110 cl2">Address</span>
 
                 <p className="stext-115 cl6 size-213 p-t-18">
-                  SH Udhyog Center 8th floor, 379 Hudson St, New York, NY 10018 US
+                  SH steel Udhyog, Balbidhya chowk, Kohalpur 10 , Banke, Nepal
                 </p>
               </div>
             </div>
@@ -82,6 +82,7 @@ export default function fill(props) {
                 <span className="mtext-110 cl2">Lets Talk</span>
 
                 <p className="stext-115 cl1 size-213 p-t-18">+977 081 540197</p>
+                <p className="stext-115 cl1 size-213 p-t-18">+977 9858022037</p>
               </div>
             </div>
 
@@ -93,7 +94,7 @@ export default function fill(props) {
               <div className="title-container">
                 <span className="mtext-110 cl2">Sale Support</span>
 
-                <p className="stext-115 cl1 size-213 p-t-18">contact@example.com</p>
+                <p className="stext-115 cl1 size-213 p-t-18">shsteeludhyog2013@gmail.com</p>
               </div>
             </div>
           </div>

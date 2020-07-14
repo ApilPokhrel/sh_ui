@@ -36,7 +36,7 @@ function Spec(props) {
                         className="color"
                         key={i}
                         style={{
-                          color: c,
+                          color: c.value,
                           marginBottom: "-4px",
                           marginLeft: "5px",
                           border: "1px solid white",

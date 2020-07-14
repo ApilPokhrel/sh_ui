@@ -16,6 +16,7 @@ import Call from "./Call";
 function Top(props) {
   const [features, setFeatures] = useState([]);
   const [options, setOptions] = useState([]);
+  const [prices, setPrices] = useState([]);
   const [url, setUrl] = useState("");
 
   const [files, setFiles] = useState([]);
@@ -33,7 +34,6 @@ function Top(props) {
     Call.getProduct(slug)
       .then(d => {
         let { data } = d;
-        console.log(data);
         if (!data) Router.back();
         data = data.document;
         let files = data.files;
@@ -43,6 +43,8 @@ function Top(props) {
 
         let features = data.features;
         setFeatures(features);
+
+        setPrices(data.prices);
 
         let specs = data.specs;
         if (data.colors.length) {
@@ -123,13 +125,19 @@ function Top(props) {
               />
             ) : (
               <video
-                className="file col-3"
                 key={i}
-                src={`${e.url}${e.name}`}
+                className="file col-3"
+                autoPlay="true"
+                loop="true"
+                muted="true"
+                controls="true"
+                data-reactid=".0.1.0.0"
                 onClick={() => {
                   handleFileClick(e);
                 }}
-              ></video>
+              >
+                <source type="video/mp4" data-reactid=".0.1.0.0.0" src={`${e.url}${e.name}.mp4`} />
+              </video>
             );
           })}
         </div>
@@ -202,7 +210,7 @@ function Top(props) {
                           <FaCircle
                             className="color"
                             style={{
-                              color: e.value[0],
+                              color: e.value[0].value,
                               marginBottom: "-3px",
                               marginLeft: "5px",
                               border: "1px solid black",
@@ -228,6 +236,27 @@ function Top(props) {
               </div>
             </div>
           </div>
+          <div className="wholesale-container"  
+	          style={{ display: prices && prices.length ? "block" : "none" }}>
+            <div className="inline">
+              <h2>Wholesale</h2>
+            </div>
+            <div className="div">
+              <table id="t01">
+                <tr>
+                  <th>Quantity</th>
+                  <th>Discount</th>
+                </tr>
+                {prices.map((e, i) => (
+                  <tr>
+                    <td>{e.qty} pieces</td>
+                    <td>{e.discount}%</td>
+                  </tr>
+                ))}
+              </table>
+            </div>
+          </div>
+
           <div className="desc-container">
             <h5>{`${product.desc ? product.desc.substring(0, 100) : ""}...`}</h5>
           </div>

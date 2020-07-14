@@ -48,15 +48,29 @@ function Post(props) {
         {posts.map((e, i) => (
           <div className="post-item" key={i}>
             <div className="file">
-              {e.file && e.file.type ? (
-                e.file.type.startsWith("image") ? (
+              {e.file ? (
+                e.file.type &&  e.file.type.startsWith("image") ? (
                   <img
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     src={`${e.file.url}${e.file.name}_510x340.jpg`}
                   />
                 ) : (
-                  <video style={{ width: "100%", height: "100%", objectFit: "cover" }} controls>
-                    <source src={`${e.file.url}${e.file.name}`} type="video/mp4" />
+                  <video
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    autoPlay="true"
+                    loop="true"
+                    muted="true"
+                    controls="true"
+                    data-reactid=".0.1.0.0"
+                    onClick={() => {
+                      handleFileClick(e);
+                    }}
+                  >
+                    <source
+                      type="video/mp4"
+                      data-reactid=".0.1.0.0.0"
+                      src={`${e.file.url}${e.file.name}.mp4`}
+                    />
                   </video>
                 )
               ) : (

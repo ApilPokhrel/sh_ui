@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import Router from "next/router";
 
 function category(props) {
-  let handleRoute = id => {
+  let handleRoute = (id, name) => {
     Router.push({
       pathname: "/shop",
-      query: { c: id }
+      query: { c: id, cn: name }
     });
   };
 
@@ -17,7 +17,7 @@ function category(props) {
             className="h-c-item"
             key={i}
             onClick={() => {
-              handleRoute(e._id);
+              handleRoute(e._id, e.name);
             }}
           >
             <img src={`${e.profile.url}${e.profile.name}_510x340.jpg`} alt="IMG-BANNER" />

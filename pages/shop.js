@@ -5,7 +5,7 @@ import Back from "../components/common/Back";
 import Product from "../components/shop/product";
 import Title from "../components/shop/title";
 
-export default function home(props) {
+function shop(props) {
   const [filters, setFilters] = useState({});
 
   let handleFilter = payload => {
@@ -15,7 +15,7 @@ export default function home(props) {
     <Layout top={false}>
       <div className="product-main">
         <Back />
-        <Title title="Steel Doors" style={{ marginLeft: "50px" }} />
+        <Title title={props.title} style={{ marginLeft: "50px" }} />
         <Filter filter={handleFilter} />
         <Product filters={filters} />
         <style jsx>{`
@@ -33,3 +33,9 @@ export default function home(props) {
     </Layout>
   );
 }
+
+shop.getInitialProps = async ({ query }) => {
+  return { title: query.cn };
+};
+
+export default shop;

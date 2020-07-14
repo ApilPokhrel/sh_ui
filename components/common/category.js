@@ -1,10 +1,10 @@
 import Router from "next/router";
 
 function category(props) {
-  let handleRoute = id => {
+  let handleRoute = (id, name) => {
     Router.push({
       pathname: "/shop",
-      query: { c: id }
+      query: { c: id, cn: name }
     });
   };
   return (
@@ -16,7 +16,7 @@ function category(props) {
               className="center category"
               key={i}
               onClick={() => {
-                handleRoute(e._id);
+                handleRoute(e._id, e.name);
               }}
               style={{
                 backgroundImage: `url(${e.profile.url}${e.profile.name}_510x340.jpg)`,

@@ -17,7 +17,6 @@ export default function product(props) {
         let {
           data: { data }
         } = d;
-        console.log(data);
         setProducts(data);
       })
       .catch(error => {

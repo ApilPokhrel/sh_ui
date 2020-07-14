@@ -81,7 +81,7 @@ export default class SliderCustom extends Component {
                     <h1>{e.sub2}</h1>
                   </div>
                   <div className="shop-btn">
-                    <a href="#" style={{ color: e.btnColor, backgroundColor: e.btnBackground }}>
+                    <a href={e.link} style={{ color: e.btnColor, backgroundColor: e.btnBackground }}>
                       {e.btnText}
                     </a>
                   </div>
@@ -153,13 +153,37 @@ export default class SliderCustom extends Component {
     font-size: 20px;
     padding: 10px 35px;
 }
+
+
 .container-h-full{
   background-color: #333;
   color: #222;
   padding: 100px;
   width: 100%;
   height: 100vh;
-}`}</style>
+}
+
+ @media only screen and (max-width: 668px) {
+          .sub1{
+  font-size: 25px;
+  font-weight: 300;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.sub2{
+  font-size: 25px;
+  margin: 0px;
+}
+
+.container-h-full{
+  background-color: #333;
+  color: #222;
+  padding: 100px 20px;
+}
+
+ }
+
+`}</style>
       </div>
     );
   }

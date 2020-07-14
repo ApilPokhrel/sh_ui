@@ -38,7 +38,7 @@ function Top(props) {
           }}
           onClick={handleClick}
         >
-          Wholesale
+          Shop
         </a>
       </Link>
 

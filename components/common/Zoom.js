@@ -35,7 +35,20 @@ function Zoom(props) {
           src={`${props.url}${props.name}_510x340.jpg`}
         />
       ) : (
-        <video src={`${props.url}${props.name}`}></video>
+        <video
+          className="file col-3"
+          autoPlay="true"
+          loop="true"
+          muted="true"
+          controls="true"
+          data-reactid=".0.1.0.0"
+        >
+          <source
+            type="video/mp4"
+            data-reactid=".0.1.0.0.0"
+            src={`${props.url}${props.name}.mp4`}
+          />
+        </video>
       )}
     </div>
   );

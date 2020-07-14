@@ -16,7 +16,7 @@ export default function Foot(props) {
             <ul>
               {props.categories.map((e, i) => (
                 <li className="p-b-6" key={i}>
-                  <Link href={`/shop?c=${e._id}`}>
+                  <Link href={`/shop?c=${e._id}&cn=${e.name}`}>
                     <a href="#" className="foot-link">
                       {e.name}
                     </a>
@@ -31,8 +31,8 @@ export default function Foot(props) {
 
             <ul>
               <li className="p-b-6">
-                <a href="#" className="foot-link">
-                  Contact
+                <a href="/contact" className="foot-link">
+                  9858022037 (Nepal +977)
                 </a>
               </li>
 
@@ -44,7 +44,7 @@ export default function Foot(props) {
 
               <li className="p-b-6">
                 <a href="#" className="foot-link">
-                  @email.example.com
+                  shsteeludhyog2013@gmail.com
                 </a>
               </li>
             </ul>
@@ -56,8 +56,7 @@ export default function Foot(props) {
             <ul>
               <li className="p-b-6">
                 <span className="foot-link">
-                  Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY
-                  10018
+                  Any questions? Balbidhya chowk, Kohalpur 10 , Banke, Nepal
                 </span>
               </li>
             </ul>
