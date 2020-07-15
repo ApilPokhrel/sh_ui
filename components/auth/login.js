@@ -25,8 +25,10 @@ class Login extends Component {
       .then(d => {
         let { data } = d;
         window.localStorage.setItem("token", data.accessToken);
-        if (!data.is_verified) {
+        if (!data.user.is_verified) {
           Router.push("/verification");
+        } else {
+          Router.push("/");
         }
       })
       .catch(err => {
@@ -142,9 +144,12 @@ class Login extends Component {
 
           <div className="container" style={{ backgroundColor: "#f1f1f1" }}>
             <span className="psw">
-              Forgot <a href="#">password?</a>
+              Forgot{" "}
+              <Link href="/reset">
+                <a href="#">password ?</a>
+              </Link>
             </span>
-            <Link href="/register" className="psw">
+            <Link href="/register">
               <a href="#">Sign Up</a>
             </Link>
           </div>

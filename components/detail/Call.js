@@ -23,7 +23,16 @@ let Call = {
       method: "get",
       url: `${API_URL}/review/product`,
       headers: { token: window.localStorage.getItem("token") },
-      data: { product }
+      params: { product }
+    });
+  },
+
+  listReview: product => {
+    return Axios({
+      method: "get",
+      url: `${API_URL}/review/all`,
+      headers: { token: window.localStorage.getItem("token") },
+      params: { product }
     });
   },
 

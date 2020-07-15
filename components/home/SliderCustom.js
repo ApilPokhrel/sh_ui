@@ -21,7 +21,7 @@ export default class SliderCustom extends Component {
         this.setState({ banners: data });
       })
       .catch(error => {
-        window.location.reload();
+        console.log(error);
       });
   };
 
@@ -81,7 +81,10 @@ export default class SliderCustom extends Component {
                     <h1>{e.sub2}</h1>
                   </div>
                   <div className="shop-btn">
-                    <a href={e.link} style={{ color: e.btnColor, backgroundColor: e.btnBackground }}>
+                    <a
+                      href={e.link}
+                      style={{ color: e.btnColor, backgroundColor: e.btnBackground }}
+                    >
                       {e.btnText}
                     </a>
                   </div>

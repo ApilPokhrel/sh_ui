@@ -2,26 +2,6 @@ import { useState, useEffect } from "react";
 import Call from "./Call";
 
 function Post(props) {
-  const [dummyPosts, setDummyPosts] = useState([
-    {
-      file: {
-        type: "image",
-        url: "https://cdn.pixabay.com/photo/2013/05/07/11/25/chain-109302__340.jpg"
-      },
-      desc:
-        "A long description is a way to provide long alternative text for non-text elements, such as images. Generally, alternative text exceeding 250 characters, which cannot be made more concise without",
-      title: "Fire Proof"
-    },
-    {
-      file: {
-        type: "image",
-        url: "https://cdn.pixabay.com/photo/2018/04/06/19/35/door-3296644__340.jpg"
-      },
-      desc: "Get the best fire proof door arounf the world heat and cold buster. Excellent pal",
-      title: "Weather Resistance"
-    }
-  ]);
-
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -49,7 +29,7 @@ function Post(props) {
           <div className="post-item" key={i}>
             <div className="file">
               {e.file ? (
-                e.file.type &&  e.file.type.startsWith("image") ? (
+                e.file.type && e.file.type.startsWith("image") ? (
                   <img
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     src={`${e.file.url}${e.file.name}_510x340.jpg`}
@@ -57,10 +37,10 @@ function Post(props) {
                 ) : (
                   <video
                     style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    autoPlay="true"
-                    loop="true"
-                    muted="true"
-                    controls="true"
+                    autoPlay={true}
+                    loop={true}
+                    muted={true}
+                    controls={true}
                     data-reactid=".0.1.0.0"
                     onClick={() => {
                       handleFileClick(e);

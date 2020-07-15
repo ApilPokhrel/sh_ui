@@ -1,58 +1,20 @@
 import React, { Component } from "react";
-import Router from "next/router";
-import Call from "./Call";
 
-class Verify extends Component {
+class EmailVerify extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      code: "",
-      email: "",
-      phone: "",
-      password: ""
+      email: ""
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleVerify = this.handleVerify.bind(this);
-    this.handleSendAgain = this.handleSendAgain.bind(this);
   }
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  handleVerify = e => {
-    e.preventDefault();
-    Call.verify(this.state.code)
-      .then(d => {
-        let { data } = d;
-        //go to Home
-        if (data) Router.push("/");
-        else alert("Try Again Later!");
-      })
-      .catch(e => {
-        if (e.status == 401) {
-          Router.push("/login");
-        }
-        console.log(e);
 
-        if (e.response) alert(e.response.data.message || "Try Again");
-        else alert("Try Again Later!");
-      });
-  };
-  handleSendAgain = e => {
-    Call.sendCode()
-      .then(d => {
-        let { data } = d;
-        alert("Code sent!");
-      })
-      .catch(e => {
-        if (e.status == 401) {
-          Router.push("/login");
-        }
-        alert("Try Again Later");
-      });
-  };
   render() {
     return (
-      <div className="main-container">
+      <div className="main-container" style={{ display: this.props.display ? "block" : "none" }}>
         <style jsx>
           {`
             .main-container {
@@ -109,34 +71,28 @@ class Verify extends Component {
           `}
         </style>
         <div className="container">
-          <h1>Verify</h1>
+          <h1>Provide Email</h1>
           <hr />
-          <label htmlFor="code">
-            <b>Code</b>
+          <label htmlFor="email">
+            <b>Email</b>
           </label>
           <input
             type="text"
-            placeholder="Enter Code"
+            placeholder="Enter Email"
             onChange={this.handleChange}
-            name="code"
-            id="code"
-            required
+            name="email"
+            id="email"
+            required={true}
           />
           <button
             className="registerbtn"
             style={{ backgroundColor: "#333" }}
             type="submit"
-            onClick={this.handleVerify}
+            onClick={e => {
+              this.props.handleVerify(e, this.state.email);
+            }}
           >
-            Verify
-          </button>
-          <button
-            className="registerbtn"
-            style={{ backgroundColor: "#333" }}
-            type="submit"
-            onClick={this.handleSendAgain}
-          >
-            Send Again
+            Check
           </button>
         </div>
       </div>
@@ -144,4 +100,4 @@ class Verify extends Component {
   }
 }
 
-export default Verify;
+export default EmailVerify;

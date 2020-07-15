@@ -30,17 +30,14 @@ function Zoom(props) {
         <IoIosCloseCircleOutline />
       </span>
       {props.type.startsWith("image") ? (
-        <img
-          style={{ objectFit: "contain", height: "100vh" }}
-          src={`${props.url}${props.name}_510x340.jpg`}
-        />
+        <img style={{ objectFit: "contain" }} src={`${props.url}${props.name}_510x340.jpg`} />
       ) : (
         <video
           className="file col-3"
-          autoPlay="true"
-          loop="true"
-          muted="true"
-          controls="true"
+          autoPlay={true}
+          loop={true}
+          muted={true}
+          controls={true}
           data-reactid=".0.1.0.0"
         >
           <source

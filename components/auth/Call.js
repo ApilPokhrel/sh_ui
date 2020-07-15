@@ -14,6 +14,22 @@ let Call = {
     return Axios({
       method: "get",
       url: `${API_URL}/user/code`,
+      headers: { token: window.localStorage.getItem("token") }
+    });
+  },
+
+  sendCodeUnverified: email => {
+    return Axios({
+      method: "post",
+      url: `${API_URL}/user/sendcode`,
+      data: { email }
+    });
+  },
+
+  reset: data => {
+    return Axios({
+      method: "post",
+      url: `${API_URL}/user/reset`,
       data
     });
   },
@@ -22,6 +38,7 @@ let Call = {
     return Axios({
       method: "post",
       url: `${API_URL}/user/code`,
+      headers: { token: window.localStorage.getItem("token") },
       data: { code }
     });
   },

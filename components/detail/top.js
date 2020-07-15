@@ -147,12 +147,17 @@ function Top(props) {
         id="style-1"
         style={{ overflowY: "scroll", height: "100%" }}
       >
-        <Review
-          display={reviewDisplay}
-          reviews={product.reviews}
-          product={product._id}
-          handleClose={handleReview}
-        />
+        {product._id ? (
+          <Review
+            display={reviewDisplay}
+            reviews={product.reviews}
+            product={product._id}
+            handleClose={handleReview}
+          />
+        ) : (
+          ""
+        )}
+
         <Spec
           display={specDisplay}
           handleClose={handleSpec}
@@ -169,9 +174,7 @@ function Top(props) {
           }}
         >
           <div className="title-container">
-            <h1>
-              {product.name} ({product.min})
-            </h1>
+            <h1>{product.name}</h1>
             <div className="rating-container">
               <RatingRead rating={product.averageReview || 0} />
               <button
@@ -184,7 +187,9 @@ function Top(props) {
                 more <TiArrowRight className="icon" />
               </button>
             </div>
-            <h2>Rs {product.price}</h2>
+            <h2>
+              Rs {product.price} {product.price_unit == "normal" ? "" : "per " + product.price_unit}
+            </h2>
           </div>
           <div className="specification-container">
             <div className="inline">
@@ -234,26 +239,6 @@ function Top(props) {
                   ))}
                 </ul>
               </div>
-            </div>
-          </div>
-          <div className="wholesale-container"  
-	          style={{ display: prices && prices.length ? "block" : "none" }}>
-            <div className="inline">
-              <h2>Wholesale</h2>
-            </div>
-            <div className="div">
-              <table id="t01">
-                <tr>
-                  <th>Quantity</th>
-                  <th>Discount</th>
-                </tr>
-                {prices.map((e, i) => (
-                  <tr>
-                    <td>{e.qty} pieces</td>
-                    <td>{e.discount}%</td>
-                  </tr>
-                ))}
-              </table>
             </div>
           </div>
 

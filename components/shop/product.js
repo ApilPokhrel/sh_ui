@@ -8,7 +8,7 @@ let arrayForHoldingProducts = [];
 function product(props) {
   const [products, setProducts] = useState([]);
 
-  const [limit, setLimit] = useState(3);
+  const [limit, setLimit] = useState(13);
   const [start, setStart] = useState(0);
   const [C, setC] = useState("");
 
@@ -83,8 +83,11 @@ function product(props) {
                 </div>
                 <RatingRead rating={e.reviewCount} style={{ marginBottom: "10px" }} />
                 <div className="inline_next">
-                  <h5 className="price">Rs {e.document.price}</h5>
-                  <button className="add-btn">{`Add ( ${e.document.min} )`}</button>
+                  <h5 className="price">
+                    Rs {e.document.price}{" "}
+                    {e.document.price_unit == "normal" ? "" : "per " + e.document.price_unit}
+                  </h5>
+                  <button className="add-btn">{`Min ( ${e.document.min} )`}</button>
                 </div>
               </div>
             </div>

@@ -1,58 +1,33 @@
 import React, { Component } from "react";
-import Router from "next/router";
 import Call from "./Call";
 
-class Verify extends Component {
+class Reset extends Component {
   constructor(props) {
     super(props);
     this.state = {
       code: "",
-      email: "",
-      phone: "",
       password: ""
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleVerify = this.handleVerify.bind(this);
     this.handleSendAgain = this.handleSendAgain.bind(this);
   }
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  handleVerify = e => {
-    e.preventDefault();
-    Call.verify(this.state.code)
-      .then(d => {
-        let { data } = d;
-        //go to Home
-        if (data) Router.push("/");
-        else alert("Try Again Later!");
-      })
-      .catch(e => {
-        if (e.status == 401) {
-          Router.push("/login");
-        }
-        console.log(e);
 
-        if (e.response) alert(e.response.data.message || "Try Again");
-        else alert("Try Again Later!");
-      });
-  };
   handleSendAgain = e => {
-    Call.sendCode()
+    Call.sendCodeUnverified(this.props.email)
       .then(d => {
         let { data } = d;
         alert("Code sent!");
       })
       .catch(e => {
-        if (e.status == 401) {
-          Router.push("/login");
-        }
         alert("Try Again Later");
       });
   };
   render() {
     return (
-      <div className="main-container">
+      <div className="main-container" style={{ display: this.props.display ? "block" : "none" }}>
         <style jsx>
           {`
             .main-container {
@@ -109,7 +84,7 @@ class Verify extends Component {
           `}
         </style>
         <div className="container">
-          <h1>Verify</h1>
+          <h1>Reset</h1>
           <hr />
           <label htmlFor="code">
             <b>Code</b>
@@ -122,13 +97,27 @@ class Verify extends Component {
             id="code"
             required
           />
+
+          <label htmlFor="password">
+            <b>New Password</b>
+          </label>
+          <input
+            type="text"
+            placeholder="Enter new Password"
+            onChange={this.handleChange}
+            name="password"
+            id="password"
+            required
+          />
           <button
             className="registerbtn"
             style={{ backgroundColor: "#333" }}
             type="submit"
-            onClick={this.handleVerify}
+            onClick={e => {
+              this.props.handleReset(e, this.state.code, this.state.password);
+            }}
           >
-            Verify
+            Reset
           </button>
           <button
             className="registerbtn"
@@ -144,4 +133,4 @@ class Verify extends Component {
   }
 }
 
-export default Verify;
+export default Reset;

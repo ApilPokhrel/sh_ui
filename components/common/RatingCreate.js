@@ -1,7 +1,26 @@
 import "../../styles/rating.create.module.scss";
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 
 function RatingCreate(props) {
+  useEffect(() => {
+    init();
+  }, []);
+
+  let init = () => {
+    if (props.rating && props.rating > 0)
+      for (let n = 1; n <= 5; n++) {
+        let rt = document.getElementById(`s_${n}`);
+        if (num < n) {
+          rt.style.color = "black";
+          rt.textContent = "☆";
+        } else {
+          rt.style.color = "orange";
+          rt.textContent = "★";
+        }
+      }
+  };
+
   let handleClick = (e, num) => {
     for (let n = 1; n <= 5; n++) {
       let rt = document.getElementById(`s_${n}`);

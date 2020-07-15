@@ -10,20 +10,35 @@ import Router from "next/router";
 function Review(props) {
   const [rating, setRating] = useState(0);
   const [text, setText] = useState("");
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     Call.getReview(props.product)
       .then(d => {
-        let {
-          data: { data }
-        } = d;
-
+        let { data } = d;
         setRating(data.rating);
         setText(data.text);
       })
-      .catch(error => {});
+      .catch(error => {
+        console.log(error);
+      });
+
+    get();
   }, []);
 
+  let get = () => {
+    Call.listReview(props.product)
+      .then(d => {
+        let {
+          data: { data }
+        } = d;
+        // data = data.filter(e => review._id != e._id);
+        setReviews(data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
   let handleCreate = num => {
     setRating(num);
   };
@@ -38,7 +53,7 @@ function Review(props) {
       alert("must provide rating");
       return;
     }
-    Call.addReview({ rating, text })
+    Call.addReview({ rating, text, product: props.product, status: "active" })
       .then(d => {
         let {
           data: { data }
@@ -47,9 +62,11 @@ function Review(props) {
         setProducts(data);
       })
       .catch(error => {
-        if (error.response.status == (401 || 403)) {
-          Router.push("/login");
-        }
+        console.log("Error", error.response);
+        if (error.response)
+          if (error.response.status == (401 || 403)) {
+            Router.push("/login");
+          }
         //Go to login
       });
   };
@@ -74,13 +91,13 @@ function Review(props) {
         <IoIosCloseCircleOutline style={{ marginTop: "4px" }} />
       </span>
       <div className="review-create" style={{ position: "absolute", width: "inherit" }}>
-        <RatingCreate onCreate={handleCreate} />
-        <textarea placeholder="Enter your review..." onChange={handleChange} />
+        <RatingCreate onCreate={handleCreate} rating={rating} />
+        <textarea placeholder="Enter your review..." onChange={handleChange} defaultValue={text} />
         <button onClick={handleSubmit}>submit</button>
       </div>
       <div className="review-read" style={{ marginTop: "150px" }}>
         <ul style={{ padding: "8px", listStyle: "none" }}>
-          {props.reviews.map((e, i) => (
+          {reviews.map((e, i) => (
             <li key={i} className="item" style={{ marginBottom: "20px" }}>
               <span
                 style={{
@@ -89,7 +106,7 @@ function Review(props) {
                 }}
                 className="author-name"
               >
-                {e.author}
+                {e.user.name.first} {e.user.name.last}
                 <RatingRead style={{ marginLeft: "13px" }} rating={e.rating} />
               </span>
               <p
