@@ -8,7 +8,7 @@ function Zoom(props) {
         zIndex: 10000,
         padding: "50px",
         display: props.display,
-        position: "fixed",
+        position: "absolute",
         backgroundColor: "#777",
         marginLeft: "auto",
         marginRight: "auto"
@@ -30,7 +30,10 @@ function Zoom(props) {
         <IoIosCloseCircleOutline />
       </span>
       {props.type.startsWith("image") ? (
-        <img style={{ objectFit: "contain" }} src={`${props.url}${props.name}_510x340.jpg`} />
+        <img
+          style={{ objectFit: "contain", height: "100%", width: "100%" }}
+          src={`${props.url}${props.name}_510x340.jpg`}
+        />
       ) : (
         <video
           className="file col-3"
@@ -38,6 +41,7 @@ function Zoom(props) {
           loop={true}
           muted={true}
           controls={true}
+          style={{ height: "100%", width: "100%" }}
           data-reactid=".0.1.0.0"
         >
           <source
