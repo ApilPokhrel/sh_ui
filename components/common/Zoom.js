@@ -31,8 +31,8 @@ function Zoom(props) {
       </span>
       {props.type.startsWith("image") ? (
         <img
-          style={{ objectFit: "contain", height: "100%", width: "100%" }}
-          src={`${props.url}${props.name}_510x340.jpg`}
+          style={{ objectFit: "contain", width: "100%" }}
+          src={`${props.url}${props.name}_medium.jpg`}
         />
       ) : (
         <video
