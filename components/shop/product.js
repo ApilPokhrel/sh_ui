@@ -176,7 +176,6 @@ function product(props) {
         }
 
         .product_img_container img {
-          max-height: 250px;
           width: 100%;
           transition: 0.2s all ease-in-out;
         }
