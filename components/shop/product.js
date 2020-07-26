@@ -83,7 +83,7 @@ function product(props) {
                 </div>
                 <RatingRead rating={e.reviewCount} style={{ marginBottom: "10px" }} />
                 <div className="inline_next">
-                  <h5 className="price">
+                  <h5 className="price" style={{ display: "none" }}>
                     Rs {e.document.price}{" "}
                     {e.document.price_unit == "normal" ? "" : "per " + e.document.price_unit}
                   </h5>

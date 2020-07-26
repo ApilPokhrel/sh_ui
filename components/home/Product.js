@@ -62,7 +62,7 @@ export default function product(props) {
                 <h5 className="title">{e.name}</h5>
               </div>
               <div className="inline_next">
-                <h5 className="price">
+                <h5 className="price" style={{ display: "none" }}>
                   Rs {e.price} {e.price_unit == "normal" ? "" : "per " + e.price_unit}
                 </h5>
                 <GrFormNextLink className="product_next_btn" />
