@@ -160,7 +160,6 @@ function product(props) {
           border-radius: 10px;
           border-collapse: separate;
           margin: 10px 5px;
-          max-height: 400px;
         }
 
         .product_item:hover {
