@@ -37,7 +37,7 @@ function filter(props) {
   };
 
   return (
-    <div className="filter-box clear">
+    <div className="filter-box clear" style={{ display: "none" }}>
       <div className="filter-item col-3">
         <div className="mtext">Sort By</div>
 

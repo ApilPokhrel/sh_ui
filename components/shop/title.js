@@ -5,7 +5,7 @@ function title(props) {
   return (
     <div>
       <div className="product_titlebar" style={props.style}>
-        <div className="filter">
+        <div className="filter" style={{ display: "none" }}>
           <button>
             <BsFilter
               className="icon"
