@@ -1,9 +1,9 @@
-import React from "react";
-const Layout = React.lazy(() => import("../components/_layouts/Layout"));
-const Slidder = React.lazy(() => import("../components/home/SliderCustom"));
-const Product = React.lazy(() => import("../components/home/Product"));
-const Post = React.lazy(() => import("../components/home/posts"));
-const Category = React.lazy(() => import("../components/home/category"));
+import dynamic from "next/dynamic";
+const Layout = dynamic(() => import("../components/_layouts/Layout"));
+const Slidder = dynamic(() => import("../components/home/SliderCustom"));
+const Product = dynamic(() => import("../components/home/Product"));
+const Post = dynamic(() => import("../components/home/posts"));
+const Category = dynamic(() => import("../components/home/category"));
 import { useState, useEffect } from "react";
 
 function home(props) {
