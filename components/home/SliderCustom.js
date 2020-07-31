@@ -60,7 +60,6 @@ export default class SliderCustom extends Component {
                   className="container-h-full"
                   style={{
                     backgroundImage: `url(${e.profile.url}${e.profile.name}_large.jpg)`,
-                    height: "100%",
                     backgroundRepeat: "no-repeat",
                     width: "100%",
                     backgroundSize: "cover",
@@ -164,7 +163,7 @@ export default class SliderCustom extends Component {
   color: #222;
   padding: 100px;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
  @media only screen and (max-width: 668px) {
@@ -181,6 +180,7 @@ export default class SliderCustom extends Component {
 
 .container-h-full{
   background-color: #333;
+  height: 100%;
   color: #222;
   padding: 100px 20px;
 }
