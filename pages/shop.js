@@ -1,8 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Layout from "../components/_layouts/Layout";
-import Filter from "../components/shop/filter";
+const Filter = React.lazy(() => import("../components/shop/filter"));
 import Back from "../components/common/Back";
-import Product from "../components/shop/product";
+const Product = React.lazy(() => import("../components/shop/product"));
 import Title from "../components/shop/title";
 
 function shop(props) {

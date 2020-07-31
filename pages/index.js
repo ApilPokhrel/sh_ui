@@ -1,8 +1,9 @@
-import Layout from "../components/_layouts/Layout";
-import Slidder from "../components/home/SliderCustom";
-import Product from "../components/home/Product";
-import Post from "../components/home/posts";
-import Category from "../components/home/category";
+import React from "react";
+const Layout = React.lazy(() => import("../components/_layouts/Layout"));
+const Slidder = React.lazy(() => import("../components/home/SliderCustom"));
+const Product = React.lazy(() => import("../components/home/Product"));
+const Post = React.lazy(() => import("../components/home/posts"));
+const Category = React.lazy(() => import("../components/home/category"));
 import { useState, useEffect } from "react";
 
 function home(props) {

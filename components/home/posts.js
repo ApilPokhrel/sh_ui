@@ -36,7 +36,7 @@ function Post(props) {
                   />
                 ) : (
                   <video
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    style={{ width: "100%", objectFit: "cover" }}
                     autoPlay={true}
                     loop={true}
                     muted={true}
@@ -113,6 +113,10 @@ function Post(props) {
         @media only screen and (max-width: 668px) {
           .posts {
             padding: 4px 5px;
+          }
+
+          .post-item {
+            grid-template-columns: repeat(1, 1fr);
           }
         }
       `}</style>
