@@ -187,7 +187,7 @@ function Top(props) {
                 more <TiArrowRight className="icon" />
               </button>
             </div>
-            <h2>
+            <h2 style={{ display: "none" }}>
               Rs {product.price} {product.price_unit == "normal" ? "" : "per " + product.price_unit}
             </h2>
           </div>
