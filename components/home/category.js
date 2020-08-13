@@ -24,7 +24,11 @@ function category(props) {
 
             <span href="" className="detail" style={{ cursor: "pointer" }}>
               <div className="detail-first">
-                <span className="name">{e.name}</span>
+                <span className="name">
+                  {/* <marquee behavior="scroll" direction="right"> */}
+                  {e.name}
+                  {/* </marquee> */}
+                </span>
               </div>
 
               <div className="detail-second">
@@ -57,7 +61,8 @@ function category(props) {
 
         .h-c-item .detail {
           position: absolute;
-          background-color: rgba(103, 117, 214, 0);
+          background-color: #111;
+          opacity: 0.1;
           left: 0px;
           top: 0px;
           transition: all 0.3s;
@@ -82,9 +87,7 @@ function category(props) {
           font-weight: 700;
           font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
           line-height: 1.1;
-          padding: 5px 17px;
-          background-color: #777;
-          border-radius: 50px;
+          padding: 5px 5px;
         }
 
         .h-c-item .detail .btn {

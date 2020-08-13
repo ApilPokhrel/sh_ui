@@ -74,7 +74,7 @@ function product(props) {
               <div className="product_img_container">
                 <img
                   alt={e.document.name}
-                  src={`${e.document.profile.url}${e.document.profile.name}_510x340.jpg`}
+                  src={`${e.document.profile.url}${e.document.profile.name}_medium.jpg`}
                 />
               </div>
               <div className="product_detail_container">
