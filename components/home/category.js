@@ -61,8 +61,6 @@ function category(props) {
 
         .h-c-item .detail {
           position: absolute;
-          background-color: #111;
-          opacity: 0.1;
           left: 0px;
           top: 0px;
           transition: all 0.3s;
@@ -83,7 +81,7 @@ function category(props) {
         }
 
         .h-c-item .detail .name {
-          font-size: 32px;
+          font-size: 35px;
           font-weight: 700;
           font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
           line-height: 1.1;
