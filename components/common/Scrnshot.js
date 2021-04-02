@@ -1,5 +1,6 @@
 import { useState, createRef } from "react";
-import QRCode from "qrcode.react";
+import { QRCode } from "react-qrcode-logo";
+
 import { useScreenshot } from "use-react-screenshot";
 
 // import Screenshot from "react-screenshots";
@@ -36,11 +37,14 @@ function Scrnshot(params) {
     <div>
       <div ref={ref}>
         <QRCode
-          size={300}
-          fgColor="#111"
-          level="M"
           value={data}
-          imageSettings={{ src: "/logo_round_border.png", width: 60, height: 60 }}
+          size={300}
+          qrStyle="dots"
+          fgColor="#111"
+          logoWidth={50}
+          logoHeight={50}
+          logoOpacity={1}
+          logoImage="https://shsteels.com/logo_round_border.png"
         />
         <h3>SH steels our product is valuable</h3>
       </div>
